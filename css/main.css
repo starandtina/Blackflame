@@ -306,6 +306,8 @@ header
     width: 150px;
 
     z-index: 1;
+
+    margin: 0 15px;
 }
 
 .top-nav
@@ -380,5 +382,5 @@ header
 
 
 .section--1 {
-    background: url(/img/1-bg.png) center no-repeat;
+    background: url(img/1-bg.png) center no-repeat;
 }
