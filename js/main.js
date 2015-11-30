@@ -1,14 +1,31 @@
 $(document).ready(function () {
+    var slideTimeout;
     $('.full-page').fullpage({
-        sectionsColor: ['#fff', '#000', '#f7ba46', '#000', '#000', '#e9e9eb'],
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', 'lastPage'],
+        sectionsColor: ['#fff', '#000', '#f8b330', '#fff', '#000', '#e9e9eb', '#fff'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage'],
         // navigation: true,
         // navigationPosition: 'right',
         menu: '#menu',
         css3: true,
+        paddingTop: '48px',
+        scrollOverflow: true,
         scrollingSpeed: 700,
-        // slidesNavigation: true,
-        // slidesNavPosition: 'bottom'
+        slidesNavigation: true,
+        // slidesNavPosition: 'bottom',
+        afterRender: function () {
+            //on page load, start the slideshow
+            slideTimeout = setInterval(function () {
+                $.fn.fullpage.moveSlideRight();
+            }, 5000);
+        },
+        onLeave: function (index, nextIndex, direction) {
+            if (index === '1') {
+                clearInterval(slideTimeout);
+            } else if (nextIndex === '1')
+                slideTimeout = setInterval(function () {
+                    $.fn.fullpage.moveSlideRight();
+                }, 5000);
+        }
     });
 
     // popup images
