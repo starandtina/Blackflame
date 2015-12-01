@@ -10,10 +10,12 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
-    color: #222;
+html
+{
     font-size: 1em;
     line-height: 1.4;
+
+    color: #222;
 }
 
 /*
@@ -24,12 +26,14 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
+::-moz-selection
+{
     background: #b3d4fc;
     text-shadow: none;
 }
 
-::selection {
+::selection
+{
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -38,13 +42,16 @@ html {
  * A better looking default horizontal rule
  */
 
-hr {
+hr
+{
     display: block;
+
     height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
+
+    border: 0;
+    border-top: 1px solid #ccc;
 }
 
 /*
@@ -58,7 +65,8 @@ canvas,
 iframe,
 img,
 svg,
-video {
+video
+{
     vertical-align: middle;
 }
 
@@ -66,17 +74,20 @@ video {
  * Remove default fieldset styles.
  */
 
-fieldset {
-    border: 0;
+fieldset
+{
     margin: 0;
     padding: 0;
+
+    border: 0;
 }
 
 /*
  * Allow only vertical resizing of textareas.
  */
 
-textarea {
+textarea
+{
     resize: vertical;
 }
 
@@ -84,11 +95,13 @@ textarea {
    Browser Upgrade Prompt
    ========================================================================== */
 
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
+.browserupgrade
+{
+    margin: .2em 0;
+    padding: .2em 0;
+
     color: #000;
-    padding: 0.2em 0;
+    background: #ccc;
 }
 
 /* ==========================================================================
@@ -119,7 +132,8 @@ textarea {
  * Hide visually and from screen readers:
  */
 
-.hidden {
+.hidden
+{
     display: none !important;
 }
 
@@ -128,15 +142,19 @@ textarea {
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 
-.visuallyhidden {
-    border: 0;
+.visuallyhidden
+{
+    position: absolute;
+
+    overflow: hidden;
     clip: rect(0 0 0 0);
+
+    width: 1px;
     height: 1px;
     margin: -1px;
-    overflow: hidden;
     padding: 0;
-    position: absolute;
-    width: 1px;
+
+    border: 0;
 }
 
 /*
@@ -146,20 +164,24 @@ textarea {
  */
 
 .visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+.visuallyhidden.focusable:focus
+{
+    position: static;
+
+    overflow: visible;
     clip: auto;
+
+    width: auto;
     height: auto;
     margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
 }
 
 /*
  * Hide visually and from screen readers, but maintain layout
  */
 
-.invisible {
+.invisible
+{
     visibility: hidden;
 }
 
@@ -176,12 +198,15 @@ textarea {
  */
 
 .clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
+.clearfix:after
+{
     display: table; /* 2 */
+
+    content: ' '; /* 1 */
 }
 
-.clearfix:after {
+.clearfix:after
+{
     clear: both;
 }
 
@@ -191,14 +216,16 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 35em)
+{
     /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+       (min-resolution: 120dpi)
+{
     /* Style adjustments for high resolution devices */
 }
 
@@ -208,28 +235,33 @@ textarea {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-@media print {
+@media print
+{
     *,
     *:before,
-    *:after {
-        background: transparent !important;
+    *:after
+    {
         color: #000 !important; /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
+        background: transparent !important;
         box-shadow: none !important;
         text-shadow: none !important;
     }
 
     a,
-    a:visited {
+    a:visited
+    {
         text-decoration: underline;
     }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
+    a[href]:after
+    {
+        content: ' (' attr(href) ')';
     }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
+    abbr[title]:after
+    {
+        content: ' (' attr(title) ')';
     }
 
     /*
@@ -237,14 +269,17 @@ textarea {
      * or use the `javascript:` pseudo protocol
      */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+    a[href^='#']:after,
+    a[href^='javascript:']:after
+    {
+        content: '';
     }
 
     pre,
-    blockquote {
+    blockquote
+    {
         border: 1px solid #999;
+
         page-break-inside: avoid;
     }
 
@@ -253,28 +288,33 @@ textarea {
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
 
-    thead {
+    thead
+    {
         display: table-header-group;
     }
 
     tr,
-    img {
+    img
+    {
         page-break-inside: avoid;
     }
 
-    img {
+    img
+    {
         max-width: 100% !important;
     }
 
     p,
     h2,
-    h3 {
+    h3
+    {
         orphans: 3;
         widows: 3;
     }
 
     h2,
-    h3 {
+    h3
+    {
         page-break-after: avoid;
     }
 }
@@ -293,7 +333,6 @@ header
     right: 0;
 
     width: 100%;
-    height: 60px;
 
     background-color: #ededed;
 }
@@ -302,12 +341,16 @@ header
 .logo
 {
     position: absolute;
-
-    width: 150px;
-
     z-index: 1;
 
-    margin: 0 15px;
+    margin: 9px 30px;
+}
+
+.logo__img
+{
+    height: 32px;
+    max-height: 100%;
+    width: auto;
 }
 
 .top-nav
@@ -360,12 +403,11 @@ header
 }
 
 #menu li a,
-
 #menu li.active a
 {
     display: block;
 
-    padding: 9px 18px;
+    padding: 4px 18px;
 }
 
 #menu li.active a
@@ -375,7 +417,6 @@ header
 
 #menu
 {
-    height: 50px;
     margin: 0;
     padding: 0;
 }
@@ -389,16 +430,15 @@ header
 
 .full-height-image
 {
-    max-height: 85%;
-    margin: 0 auto;
     width: auto;
-    margin-top: 60px;
+    max-height: 80%;
+    margin: 0 auto;
 }
 
 .download-registration-form-btn
 {
-    padding: 10px 60px;
     margin: 20px 0;
+    padding: 10px 60px;
 }
 
 .fp-controlArrow.fp-prev
@@ -409,4 +449,63 @@ header
 .fp-controlArrow.fp-next
 {
     border-color: transparent transparent transparent #ccc;
+}
+
+.course__section
+{
+    font-size: 12px;
+
+    height: 550px;
+    margin: 10px;
+    padding: 20px;
+
+    text-align: left;
+
+    background-color: #F8BA45;;
+}
+
+.course__main-right
+{
+    overflow: hidden;
+
+    text-align: left;;
+}
+
+.m0
+{
+    margin: 0;
+}
+
+.mb20
+{
+    margin-bottom: 20px;
+}
+.cylinder{
+    display: inline-block;
+    height:544px;
+    width:0px;
+}
+.cginfo h3{
+    color:#FFFFFF;
+}
+.cglogo {
+    margin-top: 70px;
+    text-align: center;
+}
+.yk-col4 {
+    width: 240px;
+    float: left;
+    min-height: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+.v .v-thumb img,
+.p .p-thumb img {
+  width: 100%;
+}
+.videoSection {
+    padding: 40px 160px;
 }
