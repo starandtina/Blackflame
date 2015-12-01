@@ -494,12 +494,12 @@ header
 }
 .yk-col4 {
     width: 240px;
-    float: left;
     min-height: 1px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
-    display: inline;
+    display: inline-block;
+    vertical-align: top ;
 }
 
 .v .v-thumb img,
