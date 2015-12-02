@@ -425,7 +425,7 @@ header
 .section--1__content
 {
     width: 85%;
-    margin: 50px auto 0 auto;
+    margin: 20px auto 0 auto;
 }
 
 .full-height-image
@@ -456,7 +456,7 @@ header
     font-size: 12px;
 
     height: 550px;
-    margin: 10px;
+    margin: 10px 10px 30px 30px;
     padding: 20px;
 
     text-align: left;
@@ -466,7 +466,7 @@ header
 
 .course__sub-section
 {
-    margin: 0 30px
+    margin: 0 30px;
 }
 
 .course__main-right
@@ -474,6 +474,11 @@ header
     overflow: hidden;
 
     text-align: left;;
+}
+
+.course__bottom-content
+{
+    margin: 10px 20px;
 }
 
 .m0
@@ -517,7 +522,7 @@ header
 
 .consultant__contact
 {
-    margin-left: -180px;
+    width: 100%;
 }
 
 .section--1__slick{
@@ -532,4 +537,16 @@ header
 
 .section--1__slick .slick-prev{
     left: -55px;
+}
+
+.absolute-foot
+{
+    position: absolute;
+    bottom: 0;
+}
+
+.CG_separator
+{
+    height: 80%;
+    margin: 0 150px;
 }
