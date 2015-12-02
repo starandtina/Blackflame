@@ -464,6 +464,11 @@ header
     background-color: #F8BA45;;
 }
 
+.course__sub-section
+{
+    margin: 0 30px
+}
+
 .course__main-right
 {
     overflow: hidden;
@@ -508,4 +513,9 @@ header
 }
 .videoSection {
     padding: 40px 160px;
+}
+
+.consultant__contact
+{
+
 }
