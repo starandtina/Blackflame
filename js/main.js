@@ -49,11 +49,14 @@ $(document).ready(function () {
     });
 
 
-    // $('.section--1__slick').slick({
-    //     dots: true,
-    //     infinite: true,
-    //     speed: 500,
-    //     fade: true,
-    //     cssEase: 'linear'
-    // });
+    $('.section--1__slick').slick({
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 500,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        arrows: true
+    });
 });
