@@ -456,7 +456,7 @@ header
     font-size: 12px;
 
     height: 550px;
-    margin: 10px 10px 30px 30px;
+    margin: 10px 20px 30px 10px;
     padding: 20px;
 
     text-align: left;
@@ -549,4 +549,9 @@ header
 {
     height: 80%;
     margin: 0 150px;
+}
+
+.cginfo
+{
+    padding-left: 50px;
 }
