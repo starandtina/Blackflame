@@ -1,0 +1,162 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>works</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!-- <link rel="stylesheet" href="css/normalize.css" />
+    -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/jquery.fullpage.min.css" />
+  <link rel="stylesheet" href="css/magnific-popup.css" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <!--     <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/slick-theme.css" />
+    -->
+  <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+-->
+  <style>
+  .works_content {
+    width: 80%;
+    margin: 10px auto 50px auto;
+  }
+  
+  .works_image_container {
+    font-size: 0px;
+  }
+  
+  .works_image_container img {
+    height: auto;
+    width: 20%;
+  }
+  
+  .works_image_container {
+    padding: 20px;
+    background-color: #ededed;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+<p class="browserupgrade">
+    You are using an <strong>outdated</strong>
+    browser. Please
+    <a href="http://browsehappy.com/">upgrade your browser</a>
+    to improve your experience.
+</p>
+<![endif]-->
+  <!-- Add your site or application content here -->
+  <header id="header">
+    <section class='logo'>
+      <a href='/'>
+        <img class='logo__img' src='img/top_logo.png' />
+      </a>
+    </section>
+    <seciton class='top-nav'>
+      <ul id='menu'>
+        <li data-menuanchor='firstPage'>
+          <a href='./index.html#firstPage'>黑焰介绍</a>
+        </li>
+        <li data-menuanchor='secondPage'>
+          <a href='./index.html#secondPage'>师资团队</a>
+        </li>
+        <li data-menuanchor='3rdPage'>
+          <a href='./index.html#3rdPage'>课程安排</a>
+        </li>
+        <li data-menuanchor='4thPage'>
+          <a href='./index.html#4thPage'>学生作品</a>
+        </li>
+        <li data-menuanchor='5thPage'>
+          <a href='./index.html#5thPage'>CG教程</a>
+        </li>
+        <li data-menuanchor='6thPage'>
+          <a href='./index.html#6thPage'>招生咨询</a>
+        </li>
+        <li data-menuanchor='lastPage'>
+          <a href='./index.html#lastPage'>商务合作</a>
+        </li>
+      </ul>
+    </seciton>
+  </header>
+  <section class="cglogo">
+    <img src="img/logo.png" alt="">
+  </section>
+  <section class='works_section'>
+    <div class='works_content'>
+      <ul class="nav nav-tabs works_tabs">
+        <li role="presentation" class="active"><a href="#">学生作品</a></li>
+        <li role="presentation"><a href="#">老师作品</a></li>
+      </ul>
+      <div class='works_image_container student_works'>
+      </div>
+      <div class='works_image_container teacher_works'>
+      </div>
+    </div>
+  </section>
+  <script src="js/vendor/jquery-1.11.3.min.js"></script>
+  <script src="js/jquery.slimscroll.min.js"></script>
+  <script src="js/jquery.fullpage.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script>
+  $(function() {
+    var content = $('.works_section');
+
+    $('.works_tabs a').click(function(e) {
+      e.preventDefault();
+      $(this).tab('show');
+      var index = $('.works_tabs .active').index();
+      switchShowHideWorks(index);
+    });
+
+    function switchShowHideWorks(index) {
+      switch (index) {
+        case 0:
+          content.find('.student_works').show();
+          content.find('.teacher_works').hide();
+          break;
+        case 1:
+          content.find('.student_works').hide();
+          content.find('.teacher_works').show();
+          break;
+      }
+    }
+
+    function createImageHTML(folderName, number) {
+      var imgs = '';
+      var root = './';
+      while (number) {
+        var path = root + folderName + '/' + number + '.jpg';
+        imgs = '<a href="' + path + '">' + '<img src="' + path + '"><\/a>' + imgs;
+        number--;
+      }
+      return imgs;
+    }
+
+    content.find('.student_works').html(createImageHTML('student_work_images', 42));
+    content.find('.teacher_works').html(createImageHTML('teacher_work_images', 18));
+    switchShowHideWorks(0);
+
+    $('.works_image_container').magnificPopup({
+      type: 'image',
+      fixedBgPos: true,
+      delegate: 'a',
+      closeOnContentClick: true,
+      image: {
+        verticalFit: true
+      }
+    });
+
+  });
+  </script>
+  <!-- Baidu Tongji -->
+</body>
+
+</html>
