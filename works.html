@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/jquery.fullpage.min.css" />
   <link rel="stylesheet" href="css/magnific-popup.css" />
-
   <link rel="stylesheet" href="css/main.css" />
   <!--     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="css/slick-theme.css" />
@@ -31,12 +30,24 @@
     font-size: 0px;
   }
   
+  /*
   .works_image_container img {
     height: auto;
     width: 20%;
   }
+  */
+  .works_image_container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .works_image_container a{
+    height: 320px;
+    width: 320px;
+    display: block;
+  }
   
-  .works_image_container {
+  .freewall_image_container{
     padding: 20px;
     background-color: #ededed;
   }
@@ -94,9 +105,11 @@
         <li role="presentation" class="active"><a href="#">学生作品</a></li>
         <li role="presentation"><a href="#">老师作品</a></li>
       </ul>
-      <div class='works_image_container student_works'>
-      </div>
-      <div class='works_image_container teacher_works'>
+      <div class="freewall_image_container">
+        <div class='works_image_container student_works'>
+        </div>
+        <div class='works_image_container teacher_works'>
+        </div>
       </div>
     </div>
   </section>
@@ -105,8 +118,10 @@
   <script src="js/jquery.fullpage.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/vendor/freewall.min.js"></script>
   <script>
   $(function() {
+
     var content = $('.works_section');
 
     $('.works_tabs a').click(function(e) {
@@ -127,6 +142,9 @@
           content.find('.teacher_works').show();
           break;
       }
+
+      initFreeWall('.teacher_works');
+      initFreeWall('.student_works');
     }
 
     function createImageHTML(folderName, number) {
@@ -138,6 +156,19 @@
         number--;
       }
       return imgs;
+    }
+
+    function initFreeWall(selector) {
+      var wall = new Freewall(selector);
+      wall.reset({
+        selector: 'a',
+        cellW: 150,
+        cellH: 'auto',
+        onResize: function() {
+          wall.fitWidth();
+        }
+      });
+      wall.fitWidth();
     }
 
     content.find('.student_works').html(createImageHTML('student_work_images', 42));
@@ -154,6 +185,8 @@
       }
     });
 
+    initFreeWall('.student_works');
+    initFreeWall('.teacher_works');
   });
   </script>
   <!-- Baidu Tongji -->
