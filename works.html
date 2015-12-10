@@ -127,16 +127,12 @@
     function switchShowHideWorks(index) {
       switch (index) {
         case 0:
-          content.find('.student_works').show();
-          content.find('.teacher_works').hide();
+          content.find('.student_works').html(createImageHTML('student_work_images/', 42));
           break;
         case 1:
-          content.find('.student_works').hide();
-          content.find('.teacher_works').show();
+          content.find('.student_works').html(createImageHTML('teacher_work_images/', 18));
           break;
       }
-
-      initFreeWall('.teacher_works');
       initFreeWall('.student_works');
     }
 
@@ -155,19 +151,23 @@
     function initFreeWall(selector) {
       var wall = new Freewall(selector);
       wall.reset({
-        selector: 'a',
+        selector: '.brick',
         cellW: 150,
         cellH: 'auto',
+        animate: true,
         onResize: function() {
           wall.fitWidth();
         }
       });
-      wall.fitWidth();
+      var images = wall.container.find('.brick');
+      images.find('img').load(function() {
+        wall.fitWidth();
+      });
     }
 
     content.find('.student_works').html(createImageHTML('student_work_images/', 42));
-    content.find('.teacher_works').html(createImageHTML('teacher_work_images/', 18));
-    switchShowHideWorks(0);
+    //content.find('.teacher_works').html(createImageHTML('teacher_work_images/', 18));
+
 
     $('.works_image_container').magnificPopup({
       type: 'image',
@@ -180,7 +180,7 @@
     });
 
     initFreeWall('.student_works');
-    initFreeWall('.teacher_works');
+
   });
   </script>
   <!-- Baidu Tongji -->
