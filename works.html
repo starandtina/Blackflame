@@ -29,25 +29,18 @@
   .works_image_container {
     font-size: 0px;
   }
-  
   /*
   .works_image_container img {
     height: auto;
     width: 20%;
   }
   */
-  .works_image_container img {
-    width: 100%;
-    height: auto;
-  }
-
-  .works_image_container a{
-    height: 320px;
-    width: 320px;
+  
+  .works_image_container a {
     display: block;
   }
   
-  .freewall_image_container{
+  .freewall_image_container {
     padding: 20px;
     background-color: #ededed;
   }
@@ -150,10 +143,11 @@
     function createImageHTML(folderName, number) {
       var imgs = '';
       var root = './';
-      while (number) {
-        var path = root + folderName + '/' + number + '.jpg';
-        imgs = '<a href="' + path + '">' + '<img src="' + path + '"><\/a>' + imgs;
-        number--;
+      var temp = "<a class='brick' href='{path}' style='width:{width}px;'><img src='{path}' width='100%'></a>";
+
+      for (var i = 1; i < number; ++i) {
+        w = 1 + 3 * Math.random() << 0;
+        imgs += temp.replace(/\{width\}/g, w * 150).replace(/\{path\}/g, root + folderName + (i + 1) + '.jpg');
       }
       return imgs;
     }
@@ -171,8 +165,8 @@
       wall.fitWidth();
     }
 
-    content.find('.student_works').html(createImageHTML('student_work_images', 42));
-    content.find('.teacher_works').html(createImageHTML('teacher_work_images', 18));
+    content.find('.student_works').html(createImageHTML('student_work_images/', 42));
+    content.find('.teacher_works').html(createImageHTML('teacher_work_images/', 18));
     switchShowHideWorks(0);
 
     $('.works_image_container').magnificPopup({
