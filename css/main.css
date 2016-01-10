@@ -428,6 +428,11 @@ header
     margin: 20px auto 0 auto;
 }
 
+.section--1 img
+{
+    height: auto;
+}
+
 .full-height-image
 {
     width: auto;
